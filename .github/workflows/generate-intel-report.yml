@@ -41,12 +41,16 @@ jobs:
       - name: Restore OAuth token
         shell: python
         env:
-            GDRIVE_OAUTH_TOKEN: ${{ secrets.GDRIVE_OAUTH_TOKEN }}
+          GDRIVE_OAUTH_TOKEN: ${{ secrets.GDRIVE_OAUTH_TOKEN }}
         run: |
-            import base64
-            import os
-            from pathlib import Path
+          import base64
+          import os
+          from pathlib import Path
 
-            token = os.environ["GDRIVE_OAUTH_TOKEN"].strip()
-            Path("token.json").write_bytes(base64.b64decode(token))
-            print("token.json restored")
+          token = os.environ["GDRIVE_OAUTH_TOKEN"].strip()
+          Path("token.json").write_bytes(base64.b64decode(token))
+          print("token.json restored")
+
+      - name: Upload to Google Drive
+        run: |
+          python cloud_upload.py
