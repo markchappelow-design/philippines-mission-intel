@@ -576,7 +576,7 @@ def build_reference_maps_section(styles):
         "Z3 — MANILA AREA / BYPASS DECISION MAP",
         manila_map,
         "Close-up reference for Manila-area routing, congestion recognition, and bypass decision support.",
-        "D2 = Manila enter/bypass decision. D3 = continue south to Batangas if air movement is degraded."
+        "D2 = Manila enter/bypass decision. D3 = continue south to Batangas if air movement is degraded.",
         styles,
     )
 
