@@ -9,3 +9,6 @@ output/
 .DS_Store
 .vscode/
 .idea/
+*.json
+!.github/workflows/*.yml
+!.github/workflows/*.yaml
