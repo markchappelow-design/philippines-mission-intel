@@ -1,0 +1,20 @@
+{
+  "source_name": "U.S. Embassy Manila Live",
+  "section_name": "U.S. Embassy (Manila) travel advisories",
+  "content": "Latest Embassy Manila alert: Temporary Closure of U.S. Consular Agency in Cebu, March 16\u201320, 2026. Source article: https://ph.usembassy.gov/temporary-closure-of-u-s-consular-agency-in-cebu-march-16-20-2026/. Issued date: March 10, 2026. Review the linked Embassy notice directly for operational details, affected dates, consular availability, and traveler impact.",
+  "retrieved_at_utc": "2026-03-16T20:53:11.338117+00:00",
+  "source_timestamp_utc": "2026-03-10T00:00:00+00:00",
+  "max_age_hours": 24,
+  "required": true,
+  "notes": "Live Embassy Manila advisory payload",
+  "raw_metadata": {
+    "provider": "ph.usembassy.gov",
+    "api_url": "https://ph.usembassy.gov/category/alert/",
+    "live_mode": true,
+    "latest_alert_title": "Temporary Closure of U.S. Consular Agency in Cebu, March 16\u201320, 2026",
+    "article_url": "https://ph.usembassy.gov/temporary-closure-of-u-s-consular-agency-in-cebu-march-16-20-2026/",
+    "issued_date": "March 10, 2026",
+    "published_timestamp_utc": "2026-03-10T00:00:00+00:00"
+  },
+  "source_type": "DOCUMENT"
+}

@@ -1,0 +1,23 @@
+{
+  "source_name": "Open-Meteo 5-Day Forecast",
+  "section_name": "Weather forecast",
+  "content": "Weather forecast\n2026-05-02 | High 35.7\u00b0C | Low 28.0\u00b0C | Wind 18.7 km/h | Light drizzle\n2026-05-03 | High 34.7\u00b0C | Low 26.6\u00b0C | Wind 17.5 km/h | Moderate drizzle\n2026-05-04 | High 36.1\u00b0C | Low 27.1\u00b0C | Wind 16.9 km/h | Moderate drizzle\n2026-05-05 | High 36.2\u00b0C | Low 26.4\u00b0C | Wind 16.3 km/h | Overcast\n2026-05-06 | High 35.0\u00b0C | Low 27.7\u00b0C | Wind 11.5 km/h | Mainly clear\n\nHeat / Sun Exposure Advisory\nHeat injury remains a routine operational risk in the Philippines. Hydrate aggressively, use shade when available, limit prolonged midday sun exposure, and monitor for signs of heat exhaustion or heat stroke.\nUse sunscreen, lightweight clothing, and electrolytes as needed. Overcast conditions do not eliminate heat risk.",
+  "source_type": "LIVE_FEED",
+  "required": true,
+  "retrieved_at_utc": "2026-05-02T01:07:56.984555+00:00",
+  "source_timestamp_utc": "2026-05-02T01:07:56.984555+00:00",
+  "max_age_hours": 12,
+  "notes": "Five-day Manila/NAIA forecast with heat-exposure advisory.",
+  "raw_metadata": {
+    "provider": "open-meteo",
+    "api_url": "https://api.open-meteo.com/v1/forecast",
+    "timezone": "Asia/Manila",
+    "forecast_days": 5,
+    "live_fetch_attempted": true,
+    "live_fetch_ok": true,
+    "cache_fallback": false,
+    "fallback_reason": "",
+    "fallback_stage": "",
+    "fallback_reason_detail": ""
+  }
+}

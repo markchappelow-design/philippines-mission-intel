@@ -1,0 +1,25 @@
+{
+  "source_name": "Priority Intel Live",
+  "section_name": "Priority Intelligence",
+  "content": "Priority intelligence remains focused on cross-strait military signaling, regional force posture, maritime access, and indicators that could affect Philippine transportation, traveler movement, or crisis-response timelines. Regional security input: Latest Taiwan Strait / PLA activity item: 2026.03.16 PLA activities in the waters and airspace around Taiwan Click-Through Rate\uff1a347 2026. Source article: https://www.mnd.gov.tw/en/news/PlaactList. Issued/posted timestamp (UTC normalized): 2026-03-16T00:00:00+00:00. Ministry of National Defense Republic of China - World Wide Web - News Channel - PLA Activities List Go To Main content ::: 0 % S M L \u4e2d\u6587 About MND About the Minister Organizational Hierarchy and Responsibilities Former Ministers Important Policies Enemy Threats and R.O.C. Armed Forces Preparedness Regional Security Landscape Evolving Threats from PLA&#x27;s Activities The P.R.C.&#x27;s Cognitive Warfare The R.O.C. Armed Forces&#x27; Combat Readiness and Response Key Points of National Defense Policy Strengthen Realistic Training Expanding and Sustaining High-Quality Talent Development and Procurement of Weapons and Equipment Organizational Structure and Force Adjustment Application of Emerging Technologies Whole of Society Resilience Expanding Alliances and Partnerships Reform of the Military Law System National Defense Budgeting News Channel Press release PLA Activities Transportation and Access Information Service Chinese-English vocabulary comparison Bilingual Glossary American Engl",
+  "retrieved_at_utc": "2026-03-16T20:53:09.168876+00:00",
+  "source_timestamp_utc": "2026-03-16T00:00:00+00:00",
+  "max_age_hours": 24,
+  "required": true,
+  "notes": "Live priority intelligence payload with regional security integration",
+  "raw_metadata": {
+    "provider": "composite",
+    "live_mode": true,
+    "regional_source_name": "Regional Security Live",
+    "regional_raw_metadata": {
+      "provider": "mnd.gov.tw",
+      "api_url": "https://www.mnd.gov.tw/en/news/PlaactList",
+      "article_url": "https://www.mnd.gov.tw/en/news/PlaactList",
+      "latest_article_title": "2026.03.16 PLA activities in the waters and airspace around Taiwan Click-Through Rate\uff1a347 2026",
+      "published_timestamp_utc": "2026-03-16T00:00:00+00:00",
+      "live_mode": true,
+      "key_counts": {}
+    }
+  },
+  "source_type": "LIVE_FEED"
+}

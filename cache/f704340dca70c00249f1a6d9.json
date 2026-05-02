@@ -1,0 +1,22 @@
+{
+  "source_name": "Priority Intelligence - Taiwan MND",
+  "section_name": "Priority Intelligence",
+  "content": "Priority Intelligence\nPrimary source: Taiwan Ministry of National Defense PLA Activities List (https://www.mnd.gov.tw/en/news/PlaactList)\nLatest item identified: 2026.05.01\nPLA activities in the waters and airspace around Taiwan\nAssessment: PLA military signaling around Taiwan remains active and should be treated as a standing regional-tension indicator.\nOperational significance: No direct disruption to Philippine civil aviation is confirmed from this source alone, but escalation could affect East Asia route confidence, crisis posture, and contingency planning assumptions.\nBottom line: Monitor for meaningful changes in tempo, not just routine daily activity.",
+  "source_type": "WEB",
+  "required": true,
+  "retrieved_at_utc": "2026-05-02T01:07:53.611013+00:00",
+  "source_timestamp_utc": "2026-05-02T01:07:53.611013+00:00",
+  "max_age_hours": 24,
+  "notes": "Priority intelligence simplified and sourced directly to Taiwan MND.",
+  "raw_metadata": {
+    "provider": "mnd.gov.tw",
+    "api_url": "https://www.mnd.gov.tw/en/news/PlaactList",
+    "latest_title": "2026.05.01\nPLA activities in the waters and airspace around Taiwan",
+    "live_fetch_attempted": true,
+    "live_fetch_ok": true,
+    "cache_fallback": false,
+    "fallback_reason": "",
+    "fallback_stage": "",
+    "fallback_reason_detail": ""
+  }
+}

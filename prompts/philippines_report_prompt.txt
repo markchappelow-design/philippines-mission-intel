@@ -1,0 +1,45 @@
+Generate a daily public-source report titled exactly:
+
+Philippines Mission Intel Status Report
+
+Requirements:
+- Minimum 700 words
+- Use all required section headings exactly
+- Do not invent facts
+- Use only the supplied source notes and section context
+- If a section has weak or limited current reporting, say so explicitly
+- Use disciplined, operational language
+- Distinguish official advisories from derived assessment
+- Preserve uncertainty where uncertainty exists
+- Do not omit a section
+- Weigh official and higher-confidence sources more heavily than secondary reporting
+
+Required headings:
+1. Strategic Situation
+2. Priority Intelligence
+3. U.S. Embassy (Manila) travel advisories
+4. U.S. State Department travel advisories for Americans
+5. Immunization recommendations
+6. Weather forecast
+7. NAIA publications and announcements
+8. Geothermal activity reported in the country
+9. Chinese hostility towards Philippine Navy or Coastguard in the China Sea or disputed territories
+10. The effect of global conflicts affecting flights in and out of the country
+11. PAGASA updates and announcements
+12. Operational Environment
+
+After the 12 sections, add these exact labels:
+Assessment Confidence:
+Key Changes Since Prior Report:
+Watch Items for Next 24–72 Hours:
+Source Note:
+
+For Assessment Confidence:
+- Provide one overall confidence rating of High, Medium, or Low
+- Briefly explain why
+
+For Key Changes Since Prior Report:
+- Use only the supplied delta notes
+
+For Watch Items for Next 24–72 Hours:
+- Focus on credible near-term developments only

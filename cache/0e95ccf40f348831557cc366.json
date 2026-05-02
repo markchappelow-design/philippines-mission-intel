@@ -1,0 +1,14 @@
+{
+  "source_name": "CDC Traveler Health",
+  "section_name": "Immunization recommendations",
+  "content": "Immunization recommendations\nWhat happened: CDC traveler-health page for the Philippines was reachable. Extracted current recommendation cues: Philippines - Traveler view | Travelers' Health | CDC | Travelers' Health | Speeda human rabies vaccine | Equirab rabies antiserum | . These products may not be effective in the prevention of rabies and could contain harmful ingredients. | prevent rabies\nWhy it matters: Traveler-health recommendations affect pre-departure medical readiness, medication planning, and force-health protection posture.\nOperational effect: Use CDC guidance to confirm routine vaccines, destination-specific immunization needs, and any medication or vector-risk preparation before travel.\nConfidence: High",
+  "source_type": "WEB",
+  "required": true,
+  "retrieved_at_utc": "2026-03-16T23:42:39.380735+00:00",
+  "source_timestamp_utc": "2026-03-16T23:42:39.380735+00:00",
+  "max_age_hours": 168,
+  "notes": "CDC traveler-health page reachable; extracted health recommendation cues.",
+  "raw_metadata": {},
+  "quality_ok": true,
+  "quality_issues": []
+}

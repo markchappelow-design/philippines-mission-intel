@@ -1,0 +1,187 @@
+{
+  "schema_version": "2.0",
+  "report_id": "PMISR-V2",
+  "title": "Philippines Mission Intel Status Report",
+  "classification": "UNCLASSIFIED // OPEN SOURCE",
+  "runtime": {
+    "scheduled_run_zulu": "0001Z",
+    "generated_at_zulu": "{{generated_at_zulu}}",
+    "generated_at_local": "{{generated_at_local}}",
+    "report_window": "Last 24 hours plus 72-hour forecast"
+  },
+  "area_of_operations": [
+    "Philippines",
+    "North Luzon",
+    "Manila",
+    "NAIA",
+    "Iloilo",
+    "Regional contingency routes"
+  ],
+  "source_deck": {
+    "primary_sources": [
+      "Taiwan Ministry of National Defense PLA activity feed",
+      "U.S. Embassy Manila alerts",
+      "U.S. State Department Philippines Travel Advisory",
+      "PAGASA weather and tropical cyclone products",
+      "PHIVOLCS volcano bulletins",
+      "NAIA / airline / flight status sources",
+      "Port / ferry operator sources where available"
+    ],
+    "source_failures": "{{source_failures}}",
+    "cache_used": "{{cache_used}}",
+    "overall_source_confidence": "{{overall_source_confidence}}"
+  },
+  "commander_summary": {
+    "overall_condition": "{{green_amber_red}}",
+    "posture": "{{normal_prepare_execute}}",
+    "most_likely_disruption": "{{most_likely_disruption}}",
+    "most_dangerous_scenario": "{{most_dangerous_scenario}}",
+    "bottom_line": "{{bottom_line}}",
+    "recommended_coa": "{{recommended_coa}}",
+    "confidence": "{{confidence}}"
+  },
+  "condition_engine": {
+    "inputs": {
+      "regional_security": "{{regional_security_score}}",
+      "embassy_security": "{{embassy_score}}",
+      "state_advisory": "{{state_score}}",
+      "weather": "{{weather_score}}",
+      "volcanic_activity": "{{volcano_score}}",
+      "airport_disruption": "{{airport_score}}",
+      "port_ferry_disruption": "{{port_score}}",
+      "route_chokepoints": "{{route_score}}"
+    },
+    "triggered_indicators": "{{triggered_indicators}}",
+    "condition_rules_applied": "{{condition_rules_applied}}",
+    "final_condition": "{{green_amber_red}}"
+  },
+  "active_coa": {
+    "linked_plan": "{{none_or_annex_c_or_travel_protocol}}",
+    "activation_reason": "{{activation_reason}}",
+    "actions_now": "{{actions_now}}",
+    "actions_next_24h": "{{actions_next_24h}}",
+    "actions_next_72h": "{{actions_next_72h}}"
+  },
+  "intelligence_sections": [
+    {
+      "section_id": "regional_security",
+      "title": "Hostile Forces / Regional Security",
+      "latest_item": "{{latest_taiwan_mnd_item}}",
+      "assessment": "{{regional_assessment}}",
+      "delta_since_last_report": "{{regional_delta}}",
+      "operational_impact": "{{regional_operational_impact}}",
+      "condition_effect": "{{condition_effect}}",
+      "confidence": "{{regional_confidence}}"
+    },
+    {
+      "section_id": "embassy_state",
+      "title": "Embassy / State Department Posture",
+      "latest_item": "{{latest_embassy_or_state_item}}",
+      "assessment": "{{embassy_state_assessment}}",
+      "delta_since_last_report": "{{embassy_state_delta}}",
+      "operational_impact": "{{embassy_state_operational_impact}}",
+      "condition_effect": "{{condition_effect}}",
+      "confidence": "{{embassy_state_confidence}}"
+    },
+    {
+      "section_id": "weather",
+      "title": "Weather / Tropical Cyclone / Heat Risk",
+      "forecast": "{{weather_forecast_table}}",
+      "assessment": "{{weather_assessment}}",
+      "delta_since_last_report": "{{weather_delta}}",
+      "operational_impact": "{{weather_operational_impact}}",
+      "condition_effect": "{{condition_effect}}",
+      "confidence": "{{weather_confidence}}"
+    },
+    {
+      "section_id": "geological",
+      "title": "Geological / Volcanic Activity",
+      "latest_item": "{{latest_phivolcs_item}}",
+      "assessment": "{{volcano_assessment}}",
+      "delta_since_last_report": "{{volcano_delta}}",
+      "operational_impact": "{{volcano_operational_impact}}",
+      "condition_effect": "{{condition_effect}}",
+      "confidence": "{{volcano_confidence}}"
+    },
+    {
+      "section_id": "air_transit",
+      "title": "Air Transit / NAIA / Airline Disruption",
+      "latest_item": "{{latest_airport_item}}",
+      "assessment": "{{air_transit_assessment}}",
+      "delta_since_last_report": "{{air_transit_delta}}",
+      "operational_impact": "{{air_transit_operational_impact}}",
+      "condition_effect": "{{condition_effect}}",
+      "confidence": "{{air_transit_confidence}}"
+    },
+    {
+      "section_id": "maritime_port",
+      "title": "Maritime / Port / Ferry Disruption",
+      "latest_item": "{{latest_port_or_ferry_item}}",
+      "assessment": "{{maritime_assessment}}",
+      "delta_since_last_report": "{{maritime_delta}}",
+      "operational_impact": "{{maritime_operational_impact}}",
+      "condition_effect": "{{condition_effect}}",
+      "confidence": "{{maritime_confidence}}"
+    }
+  ],
+  "trigger_matrix": [
+    {
+      "indicator": "PLA activity above baseline",
+      "threshold": "Multi-domain surge, Bashi Channel activity, amphibious indicators, or explicit blockade/strike indicators",
+      "condition_shift": "Amber or Red depending severity",
+      "linked_action": "Activate Annex C preparatory or execution block"
+    },
+    {
+      "indicator": "Embassy posture change",
+      "threshold": "Demonstration/security alert affecting movement, consular access, or public safety",
+      "condition_shift": "Amber",
+      "linked_action": "Avoid affected AO; validate lodging and movement COAs"
+    },
+    {
+      "indicator": "State advisory increase",
+      "threshold": "New region-specific warning or national advisory escalation",
+      "condition_shift": "Amber/Red",
+      "linked_action": "Reassess movement; consider early departure"
+    },
+    {
+      "indicator": "Tropical cyclone / severe weather",
+      "threshold": "PAR cyclone bulletin, destructive wind risk, flooding, or landslide risk on route",
+      "condition_shift": "Amber",
+      "linked_action": "Delay movement or shift route/window"
+    },
+    {
+      "indicator": "Volcanic activity",
+      "threshold": "PHIVOLCS alert increase, ashfall risk affecting aviation/roads, eruption/lahar warning",
+      "condition_shift": "Amber/Red depending area impact",
+      "linked_action": "Avoid affected route; verify air/road/port status"
+    },
+    {
+      "indicator": "Air transit disruption",
+      "threshold": "Cancellation cluster, airspace closure, airport outage, airline operational disruption",
+      "condition_shift": "Amber/Red",
+      "linked_action": "Switch to alternate routing or Annex C ground/maritime leg"
+    }
+  ],
+  "annex_runtime_integration": {
+    "annex_c_loaded": true,
+    "active_annex_condition": "{{annex_condition}}",
+    "annex_actions_injected": "{{annex_actions_injected}}",
+    "critical_chokepoints": "{{critical_chokepoint_status_table}}",
+    "time_to_execute": "{{tte_table}}",
+    "pace_plan": "{{pace_plan_table}}"
+  },
+  "decision_guidance": {
+    "go_no_go": "{{go_no_go}}",
+    "next_decision_point_zulu": "{{next_decision_point_zulu}}",
+    "required_checks_before_next_run": "{{required_checks}}",
+    "commander_decision_required": "{{yes_no}}"
+  },
+  "quality_control": {
+    "sources_checked": "{{sources_checked}}",
+    "failed_sources": "{{failed_sources}}",
+    "fallback_used": "{{fallback_used}}",
+    "significant_change_detected": "{{significant_change_detected}}",
+    "high_severity_signals": "{{high_severity_signals}}",
+    "confidence": "{{overall_confidence}}"
+  }
+}

@@ -1,0 +1,38 @@
+philippines-mission-intel/
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── .env.example
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── config.py
+│   ├── models.py
+│   ├── source_registry.py
+│   ├── fetchers.py
+│   ├── parsers.py
+│   ├── normalizers.py
+│   ├── dedupe.py
+│   ├── section_mapper.py
+│   ├── llm_writer.py
+│   ├── validators.py
+│   ├── docx_writer.py
+│   ├── drive_client.py
+│   ├── notifier.py
+│   └── utils.py
+├── prompts/
+│   └── philippines_report_prompt.txt
+├── templates/
+│   ├── report_template.md
+│   └── report_styles.json
+├── tests/
+│   ├── test_config.py
+│   ├── test_source_registry.py
+│   ├── test_normalizers.py
+│   ├── test_dedupe.py
+│   ├── test_section_mapper.py
+│   ├── test_validators.py
+│   └── test_docx_writer.py
+└── .github/
+    └── workflows/
+        └── daily_report.yml

@@ -1,0 +1,21 @@
+You are generating a daily intelligence-style public-source report.
+
+Title the report exactly:
+Philippines Mission Intel Status Report
+
+Requirements:
+- Minimum 700 words
+- Use the exact section headings provided
+- Do not invent facts
+- Use only the extracted source notes supplied
+- If a section has limited or no current reporting, say so plainly
+- Prefer precise, operational language
+- Emphasize changes, risks, constraints, and traveler/mission relevance
+- Keep analysis disciplined and proportionate to the evidence
+- Separate official advisories from derived assessment
+- Mention dates and times when operationally relevant
+- Do not use bullets unless necessary for clarity
+- Keep tone professional and concise
+
+Output structure:
+[insert full heading structure here]

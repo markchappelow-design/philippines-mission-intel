@@ -1,0 +1,29 @@
+{
+  "source_name": "Immunization Guidance Live",
+  "section_name": "Immunization recommendations",
+  "content": "Official destination-specific travel health guidance for the Philippines currently identifies the following key immunization or prophylaxis topics: Routine vaccines, Hepatitis A, Hepatitis B, Typhoid, Rabies, Japanese encephalitis. Operators should review the CDC destination page directly before movement to confirm routine vaccine status and any trip-specific recommendations based on itinerary, duration, rural exposure, animal contact risk, mosquito exposure, and food or water conditions. Practical implications include verifying needed vaccines early, carrying preventive mosquito measures, and checking whether malaria medicine or other destination-specific precautions apply to the exact travel area. Travelers should also treat this guidance as location- and activity-dependent rather than purely country-wide, since urban-only travel, rural exposure, animal contact, or extended outdoor movement can materially change the risk picture. Pre-departure planning should include vaccine lead time, prescription availability, medical kit preparation, and confirmation that any required follow-up dosing or preventive medication schedule is compatible with the mission timeline.",
+  "retrieved_at_utc": "2026-03-16T20:53:11.760820+00:00",
+  "source_timestamp_utc": "2025-04-23T00:00:00+00:00",
+  "max_age_hours": 168,
+  "required": true,
+  "notes": "Live CDC immunization guidance payload",
+  "raw_metadata": {
+    "provider": "cdc.gov",
+    "api_url": "https://wwwnc.cdc.gov/travel/destinations/traveler/none/philippines",
+    "live_mode": true,
+    "key_points": [
+      "Routine vaccines",
+      "Hepatitis A",
+      "Hepatitis B",
+      "Typhoid",
+      "Rabies",
+      "Japanese encephalitis",
+      "Malaria",
+      "Measles",
+      "Yellow fever",
+      "Chikungunya"
+    ],
+    "published_timestamp_utc": "2025-04-23T00:00:00+00:00"
+  },
+  "source_type": "STATIC_REFERENCE"
+}

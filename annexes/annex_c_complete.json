@@ -1,0 +1,277 @@
+{
+  "schema_version": "2.0",
+  "annex_id": "PMISR-ANNEX-C",
+  "title": "Total Exfiltration Plan: North Luzon to Iloilo",
+  "classification": "UNCLASSIFIED // OPEN SOURCE",
+  "generated_from": {
+    "source_doc": "PMISR_Annex_C_Complete.pdf",
+    "source_date": "22 Apr 2026"
+  },
+  "ao": ["North Luzon", "Manila", "Iloilo"],
+  "origin": {
+    "label": "Namuac, Sanchez-Mira, Cagayan",
+    "lat": 18.5714,
+    "lon": 121.2319
+  },
+  "destination": {
+    "label": "Iloilo City / Fort San Pedro Port",
+    "lat": 10.6908,
+    "lon": 122.5833,
+    "purpose": "Southern displacement / exfiltration endpoint"
+  },
+  "conditions": {
+    "green": {
+      "label": "Routine Monitoring",
+      "meaning": "No major disruption requiring displacement preparation.",
+      "indicators": [
+        "No active kinetic escalation",
+        "Civil aviation functional",
+        "Embassy posture normal",
+        "Primary routes open"
+      ],
+      "actions": [
+        "Continue 24-hour PMISR monitoring",
+        "Validate fuel, comms, documents, and route assumptions weekly"
+      ]
+    },
+    "amber": {
+      "label": "Preparatory Phase",
+      "meaning": "Significant departure from regional stability norms.",
+      "indicators": [
+        "PLA mobilization in Southern Theater Command",
+        "Increased naval activity in the Bashi Channel",
+        "Gray-zone disruptions to national infrastructure"
+      ],
+      "actions": [
+        "Verify Iloilo property status",
+        "Source and test backup generator",
+        "Stage 60L diesel in jerry cans",
+        "Synchronize PACE plan with family members"
+      ]
+    },
+    "red": {
+      "label": "Execution Phase",
+      "meaning": "Imminent or active kinetic hostility.",
+      "indicators": [
+        "Strikes on EDCA sites",
+        "Confirmed amphibious task force movement toward Luzon",
+        "Closure of national civilian airspace"
+      ],
+      "actions": [
+        "Immediate no-notice departure",
+        "Execute primary air egress if available",
+        "Transition to ground egress via AH26 if air assets are unavailable",
+        "Clear northern coast as priority"
+      ]
+    }
+  },
+  "phases": [
+    {
+      "phase_id": "PHASE-I",
+      "title": "Departure Logistics: Namuac to Manila",
+      "purpose": "Move from North Luzon origin toward Manila or alternate port access.",
+      "legs": [
+        {
+          "mode": "air",
+          "from": "Namuac / Sanchez-Mira",
+          "to": "Laoag International Airport, then Manila",
+          "estimated_duration": "3h ground transit to Laoag, then air leg dependent on carrier",
+          "trigger": "Luzon Strait not contested and Laoag operational",
+          "provider": "Philippine Airlines / Cebu Pacific Air",
+          "contact": "PAL +63288558888; Cebu Pacific +63287020888",
+          "actions": [
+            "Coordinate ground movement via Pan-Philippine Highway",
+            "Verify flight availability before departure",
+            "Prioritize earliest viable departure"
+          ]
+        },
+        {
+          "mode": "ground",
+          "from": "Namuac / Sanchez-Mira",
+          "to": "Manila Pier 4",
+          "estimated_duration": "Approx. 7h sector time excluding stops and friction",
+          "trigger": "Air assets grounded, Laoag compromised, or air movement infeasible",
+          "route": [
+            {
+              "label": "Namuac-Aparri",
+              "lat": 18.3583,
+              "lon": 121.6311,
+              "estimated_time": "1.5h"
+            },
+            {
+              "label": "Magapit Bridge",
+              "lat": 18.1219,
+              "lon": 121.6744,
+              "estimated_time": "0.5h"
+            },
+            {
+              "label": "Dalton Pass",
+              "lat": 16.1311,
+              "lon": 120.9322,
+              "estimated_time": "2.0h"
+            },
+            {
+              "label": "Manila Pier 4",
+              "lat": 14.6144,
+              "lon": 120.9536,
+              "estimated_time": "3.0h"
+            }
+          ],
+          "actions": [
+            "Use high-occupancy van if available",
+            "Maintain 4-hour SITREP cadence",
+            "Avoid unplanned unpaved mountain routes in overloaded vehicle"
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "PHASE-II",
+      "title": "Maritime Transit: Manila to Iloilo",
+      "purpose": "Transfer from Luzon to Visayas via ROPAX ferry.",
+      "legs": [
+        {
+          "mode": "maritime",
+          "from": "Manila North Harbor / Pier 4",
+          "to": "Iloilo Port / Fort San Pedro",
+          "estimated_duration": "20-24h",
+          "trigger": "Manila port usable and manifest space available",
+          "provider": "2GO Travel",
+          "contact": "+63285287000",
+          "actions": [
+            "Verify vessel departure times",
+            "Verify manifest space for 15 personnel",
+            "Use cellular connectivity during Phase I to coordinate maritime leg"
+          ]
+        }
+      ]
+    }
+  ],
+  "pace_plan": [
+    {
+      "level": "Primary",
+      "transportation": "Air Laoag to Manila + ferry",
+      "communications": "Garmin InReach satellite"
+    },
+    {
+      "level": "Alternate",
+      "transportation": "Ground AH26 + ferry",
+      "communications": "GSM / LTE cellular"
+    },
+    {
+      "level": "Contingency",
+      "transportation": "Ground AH26 to Batangas Port",
+      "communications": "Local radio / shortwave"
+    },
+    {
+      "level": "Emergency",
+      "transportation": "Small craft maritime bypass",
+      "communications": "Courier / signal signs"
+    }
+  ],
+  "medical_support": [
+    {
+      "region": "Cagayan",
+      "name": "Cagayan Valley Medical Center",
+      "capability": "Level-3 / trauma"
+    },
+    {
+      "region": "Laoag",
+      "name": "Laoag City General Hospital",
+      "capability": "Secondary / surgical"
+    },
+    {
+      "region": "Nueva Ecija",
+      "name": "Premiere Medical Center",
+      "capability": "Regional trauma"
+    },
+    {
+      "region": "Manila",
+      "name": "Manila Doctors Hospital",
+      "capability": "Tertiary / specialized"
+    }
+  ],
+  "chokepoints": [
+    {
+      "name": "Magapit Bridge",
+      "risk": "Interdiction or blockage severs ground egress from northern coast",
+      "impact": "High",
+      "fallback_action": "Divert to Camalaniugan Port; secure banca river ferry; abandon primary vehicle if required; coordinate secondary pickup on east bank"
+    },
+    {
+      "name": "Dalton Pass",
+      "risk": "Single mountain link vulnerable to landslide, congestion, or blockade",
+      "impact": "High",
+      "fallback_action": "Hold at Santiago, Isabela; secure residential cover; avoid unpaved mountain trails in overloaded van"
+    },
+    {
+      "name": "Manila North Harbor",
+      "risk": "Port seizure, closure, crowding, or ferry disruption",
+      "impact": "High",
+      "fallback_action": "Redirect to Batangas Port as secondary RORO/ROPAX hub"
+    }
+  ],
+  "sitrep": {
+    "cadence": "Every 4 hours or upon crossing major chokepoints",
+    "template": [
+      "POS: [Current Landmark/Coord]",
+      "STAT: [Green/Amber/Red] + [Fuel %]",
+      "INT: [Next Waypoint]"
+    ]
+  },
+  "authentication": {
+    "enabled_condition": "red",
+    "challenge_reply": [
+      {
+        "type": "Fixed Password",
+        "challenge": "STORM",
+        "reply": "SHELTER"
+      },
+      {
+        "type": "Running Password",
+        "challenge": "ARROW",
+        "reply": "N/A"
+      }
+    ],
+    "recognition_signal": "Orange Cloth"
+  },
+  "sustainment": [
+    {
+      "item": "Water",
+      "specification": "Potable / sealed",
+      "quantity": "3 liters per pax"
+    },
+    {
+      "item": "Rations",
+      "specification": "High-calorie / no-cook",
+      "quantity": "72 hours"
+    },
+    {
+      "item": "First Aid",
+      "specification": "IFAK / trauma kit",
+      "quantity": "1 per vehicle"
+    },
+    {
+      "item": "Documentation",
+      "specification": "Physical ID + property deeds",
+      "quantity": "Originals"
+    }
+  ],
+  "runtime_hooks": {
+    "activate_when": [
+      "pmisr_condition == amber",
+      "pmisr_condition == red",
+      "north_luzon_route_risk >= moderate",
+      "air_transit_disruption >= moderate",
+      "regional_security_risk >= moderate"
+    ],
+    "inject_into_pmisr_sections": [
+      "active_condition",
+      "recommended_coa",
+      "execution_checklist",
+      "critical_chokepoints",
+      "pace_plan",
+      "time_to_execute"
+    ]
+  }
+}

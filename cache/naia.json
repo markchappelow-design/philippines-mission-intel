@@ -1,0 +1,16 @@
+{
+  "source_name": "NAIA Ops Stub",
+  "section_name": "NAIA",
+  "content": "Ninoy Aquino International Airport operations should be reviewed for terminal congestion, ground transportation friction, weather-related delays, and routine operational variability that may affect passenger movement. NAIA frequently experiences heavy traffic flow in surrounding road networks and terminal approach routes, particularly during peak departure and arrival windows. Travelers should allow additional buffer time for security processing, airline check-in procedures, and potential queue delays associated with high passenger volume. Monitoring airport conditions in advance of movement allows operators to adjust departure timelines, reduce unnecessary stress on travel schedules, and preserve flexibility should delays, congestion, or administrative issues arise.",
+  "retrieved_at_utc": "2026-03-15T12:29:05.013085+00:00",
+  "source_timestamp_utc": "2026-03-15T11:29:05.013085+00:00",
+  "max_age_hours": 6,
+  "required": true,
+  "notes": "Stub airport operations input",
+  "raw_metadata": {
+    "provider": "stub",
+    "api_url": "",
+    "live_mode": false
+  },
+  "source_type": "LIVE_FEED"
+}

@@ -1,0 +1,12 @@
+{
+  "source_name": "U.S. State Department",
+  "section_name": "U.S. State Department travel advisories for Americans",
+  "content": "U.S. State Department travel advisories for Americans\nWhat happened: State Department advisory page for the Philippines was reachable. Extracted advisory indicator: Philippines - Level 2: Exercise Increased Caution. Update note: Reissued after periodic review with minor edits.\nWhy it matters: The State Department travel advisory provides the baseline U.S. government risk framing for American travelers.\nOperational effect: Use this section as the governing strategic travel-risk baseline for U.S. civilians; reconcile with Embassy, local conditions, and transport-specific disruptions before movement.\nConfidence: High",
+  "source_type": "WEB",
+  "required": true,
+  "retrieved_at_utc": "2026-03-17T11:55:58.737651+00:00",
+  "source_timestamp_utc": "2026-03-17T11:55:58.737651+00:00",
+  "max_age_hours": 24,
+  "notes": "State Department page reachable; advisory level extracted from live page.",
+  "raw_metadata": {}
+}

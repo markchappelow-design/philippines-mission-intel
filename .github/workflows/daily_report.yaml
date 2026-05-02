@@ -1,0 +1,62 @@
+name: Daily Philippines Mission Intel Report
+
+on:
+  schedule:
+    - cron: "1 0 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: philippines-mission-intel
+  cancel-in-progress: false
+
+jobs:
+  build-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+
+      - name: Run tests
+        run: |
+          pytest -q
+
+      - name: Run report generator
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          GOOGLE_DRIVE_TARGET_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_TARGET_FOLDER_ID }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          REPORT_TITLE: Philippines Mission Intel Status Report
+          REPORT_PUBLISH_TIME_UTC: "0001"
+          SOURCE_CUTOFF_TIME_UTC: "2350"
+          EMAIL_NOTIFY_TO: ${{ secrets.EMAIL_NOTIFY_TO }}
+          EMAIL_NOTIFY_ENABLED: ${{ secrets.EMAIL_NOTIFY_ENABLED }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_SENDER: ${{ secrets.SMTP_SENDER }}
+          PDF_OUTPUT_ENABLED: "true"
+        run: |
+          python -m app.main
+
+      - name: Upload local output artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: philippines-mission-intel-output
+          path: output/
+          retention-days: 14

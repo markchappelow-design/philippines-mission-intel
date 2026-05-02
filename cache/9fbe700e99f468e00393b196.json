@@ -1,0 +1,22 @@
+{
+  "source_name": "NAIA Ops Live",
+  "section_name": "NAIA",
+  "content": "Latest NAIA news item: More airlines join NAIA\u2019s self check-in and automated gates. Source article: https://newnaia.com.ph/more-airlines-join-naias-self-check-in-and-automated-gates. Published date: 2026-02-19. Press Release",
+  "retrieved_at_utc": "2026-03-16T20:53:14.482644+00:00",
+  "source_timestamp_utc": "2026-02-19T00:00:00+00:00",
+  "max_age_hours": 720,
+  "required": true,
+  "notes": "Live NAIA news payload",
+  "raw_metadata": {
+    "provider": "newnaia.com.ph",
+    "api_url": "https://newnaia.com.ph/about-us/news",
+    "api_source": "https://newnaia.com.ph/api/v1/page/news/data-list",
+    "live_mode": true,
+    "latest_article_title": "More airlines join NAIA\u2019s self check-in and automated gates",
+    "article_url": "https://newnaia.com.ph/more-airlines-join-naias-self-check-in-and-automated-gates",
+    "published_label": "2026-02-19",
+    "published_timestamp_utc": "2026-02-19T00:00:00+00:00",
+    "page_slug": "more-airlines-join-naias-self-check-in-and-automated-gates"
+  },
+  "source_type": "LIVE_FEED"
+}

@@ -1,0 +1,23 @@
+HOW TO RUN PROGRAM:
+
+NOTE: Ensure all PDF files are closed prior to execution.
+
+From PowerShell...
+Change directory to C:\philippines-mission-intel
+
+
+
+RUN:
+
+python .\generate_report.py
+      and
+python generate_contingency_annex.py
+
+
+RESULTS:
+
+"C:\philippines-mission-intel\output\latest"
+
+"C:\philippines-mission-intel\output"
+
+Report should be in PDF format

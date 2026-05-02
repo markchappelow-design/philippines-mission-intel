@@ -1,0 +1,236 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pmisr_annex_c.schema.json",
+  "title": "PMISR Annex C Total Exfiltration Plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "annex_id",
+    "title",
+    "classification",
+    "generated_from",
+    "ao",
+    "origin",
+    "destination",
+    "conditions",
+    "phases",
+    "pace_plan",
+    "medical_support",
+    "chokepoints",
+    "sitrep",
+    "authentication",
+    "sustainment",
+    "runtime_hooks"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "2.0" },
+    "annex_id": { "type": "string" },
+    "title": { "type": "string" },
+    "classification": { "type": "string" },
+    "generated_from": {
+      "type": "object",
+      "required": ["source_doc", "source_date"],
+      "properties": {
+        "source_doc": { "type": "string" },
+        "source_date": { "type": "string" }
+      }
+    },
+    "ao": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "origin": {
+      "type": "object",
+      "required": ["label", "lat", "lon"],
+      "properties": {
+        "label": { "type": "string" },
+        "lat": { "type": "number" },
+        "lon": { "type": "number" }
+      }
+    },
+    "destination": {
+      "type": "object",
+      "required": ["label", "lat", "lon", "purpose"],
+      "properties": {
+        "label": { "type": "string" },
+        "lat": { "type": "number" },
+        "lon": { "type": "number" },
+        "purpose": { "type": "string" }
+      }
+    },
+    "conditions": {
+      "type": "object",
+      "required": ["green", "amber", "red"],
+      "properties": {
+        "green": { "$ref": "#/$defs/condition" },
+        "amber": { "$ref": "#/$defs/condition" },
+        "red": { "$ref": "#/$defs/condition" }
+      }
+    },
+    "phases": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/phase" }
+    },
+    "pace_plan": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/pace_entry" }
+    },
+    "medical_support": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/medical_facility" }
+    },
+    "chokepoints": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/chokepoint" }
+    },
+    "sitrep": {
+      "type": "object",
+      "required": ["cadence", "template"],
+      "properties": {
+        "cadence": { "type": "string" },
+        "template": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "authentication": {
+      "type": "object",
+      "properties": {
+        "enabled_condition": { "type": "string" },
+        "challenge_reply": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "challenge", "reply"],
+            "properties": {
+              "type": { "type": "string" },
+              "challenge": { "type": "string" },
+              "reply": { "type": "string" }
+            }
+          }
+        },
+        "recognition_signal": { "type": "string" }
+      }
+    },
+    "sustainment": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/sustainment_item" }
+    },
+    "runtime_hooks": {
+      "type": "object",
+      "required": ["activate_when", "inject_into_pmisr_sections"],
+      "properties": {
+        "activate_when": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "inject_into_pmisr_sections": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "condition": {
+      "type": "object",
+      "required": ["label", "meaning", "indicators", "actions"],
+      "properties": {
+        "label": { "type": "string" },
+        "meaning": { "type": "string" },
+        "indicators": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "actions": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "phase": {
+      "type": "object",
+      "required": ["phase_id", "title", "purpose", "legs"],
+      "properties": {
+        "phase_id": { "type": "string" },
+        "title": { "type": "string" },
+        "purpose": { "type": "string" },
+        "legs": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/leg" }
+        }
+      }
+    },
+    "leg": {
+      "type": "object",
+      "required": ["mode", "from", "to", "estimated_duration", "trigger", "actions"],
+      "properties": {
+        "mode": { "type": "string" },
+        "from": { "type": "string" },
+        "to": { "type": "string" },
+        "estimated_duration": { "type": "string" },
+        "trigger": { "type": "string" },
+        "provider": { "type": "string" },
+        "contact": { "type": "string" },
+        "route": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/waypoint" }
+        },
+        "actions": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "waypoint": {
+      "type": "object",
+      "required": ["label", "lat", "lon", "estimated_time"],
+      "properties": {
+        "label": { "type": "string" },
+        "lat": { "type": "number" },
+        "lon": { "type": "number" },
+        "estimated_time": { "type": "string" }
+      }
+    },
+    "pace_entry": {
+      "type": "object",
+      "required": ["level", "transportation", "communications"],
+      "properties": {
+        "level": { "type": "string" },
+        "transportation": { "type": "string" },
+        "communications": { "type": "string" }
+      }
+    },
+    "medical_facility": {
+      "type": "object",
+      "required": ["region", "name", "capability"],
+      "properties": {
+        "region": { "type": "string" },
+        "name": { "type": "string" },
+        "capability": { "type": "string" },
+        "lat": { "type": "number" },
+        "lon": { "type": "number" }
+      }
+    },
+    "chokepoint": {
+      "type": "object",
+      "required": ["name", "risk", "impact", "fallback_action"],
+      "properties": {
+        "name": { "type": "string" },
+        "risk": { "type": "string" },
+        "impact": { "type": "string" },
+        "fallback_action": { "type": "string" }
+      }
+    },
+    "sustainment_item": {
+      "type": "object",
+      "required": ["item", "specification", "quantity"],
+      "properties": {
+        "item": { "type": "string" },
+        "specification": { "type": "string" },
+        "quantity": { "type": "string" }
+      }
+    }
+  }
+}

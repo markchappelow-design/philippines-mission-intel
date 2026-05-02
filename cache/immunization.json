@@ -1,0 +1,16 @@
+{
+  "source_name": "Immunization Guidance Stub",
+  "section_name": "Immunization recommendations",
+  "content": "Travelers should review routine and destination-specific immunization guidance prior to departure and ensure that all standard vaccinations remain current. Recommended precautions for the Philippines typically include attention to mosquito-borne illnesses, food and water safety, and general environmental exposure risks associated with tropical climates. Operators should consider preventative measures such as mosquito repellent, protective clothing, and careful selection of food and drinking water sources. Maintaining awareness of personal health status and observing good hygiene practices can significantly reduce the likelihood of illness that could disrupt travel schedules or operational timelines while in-country.",
+  "retrieved_at_utc": "2026-03-15T12:29:04.368524+00:00",
+  "source_timestamp_utc": "2026-03-14T12:29:04.368524+00:00",
+  "max_age_hours": 168,
+  "required": true,
+  "notes": "Stub immunization guidance input",
+  "raw_metadata": {
+    "provider": "stub",
+    "api_url": "",
+    "live_mode": false
+  },
+  "source_type": "STATIC_REFERENCE"
+}

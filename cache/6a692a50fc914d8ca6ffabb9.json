@@ -1,0 +1,22 @@
+{
+  "source_name": "CDC Traveler Health - Philippines",
+  "section_name": "Immunization recommendations",
+  "content": "Routine / Recommended Vaccines\nRoutine vaccines current (MMR, Tdap, influenza).\nRecommended travel vaccines commonly include Hepatitis A, Hepatitis B, and Typhoid.\n\nHigher-Risk Disease Considerations\nRabies risk is relevant due to stray animal exposure.\nMosquito-borne disease risk includes Dengue and Chikungunya; Japanese Encephalitis may matter in certain rural/agricultural exposure patterns.\nUse food and water discipline to reduce gastrointestinal disease risk.\n\nCDC Advisory Notes\n- CDC traveler page currently lists the Philippines at Level 1: Practice Usual Precautions.\n- CDC notes measles remains a concern for international travelers; ensure MMR vaccination is current.\n- Mosquito-borne illness risk remains relevant; prevent bites and use repellent.\n- Animal-bite exposure remains a practical risk; avoid contact with stray animals and seek care after bites.\n- Food- and water-borne illness remains a routine travel risk; use safe food and bottled or treated water.",
+  "source_type": "WEB",
+  "required": true,
+  "retrieved_at_utc": "2026-05-02T01:07:56.368500+00:00",
+  "source_timestamp_utc": "2026-05-02T01:07:56.368500+00:00",
+  "max_age_hours": 168,
+  "notes": "Health advisory merged with immunization guidance.",
+  "raw_metadata": {
+    "provider": "cdc.gov",
+    "api_url": "https://wwwnc.cdc.gov/travel/destinations/traveler/none/philippines",
+    "live_mode": true,
+    "live_fetch_attempted": true,
+    "live_fetch_ok": true,
+    "cache_fallback": false,
+    "fallback_reason": "",
+    "fallback_stage": "",
+    "fallback_reason_detail": ""
+  }
+}

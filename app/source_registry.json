@@ -1,0 +1,247 @@
+name: Daily Philippines Mission Intel Report
+
+import json
+from pathlib import Path
+
+
+def load_source_registry() -> list[dict]:
+    path = Path("app/source_registry.json")
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return [item for item in data if item.get("enabled", True)]
+
+
+on:
+  schedule:
+    - cron: "1 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  build-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run report generator
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          GOOGLE_DRIVE_TARGET_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_TARGET_FOLDER_ID }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          REPORT_TITLE: Philippines Mission Intel Status Report
+          REPORT_PUBLISH_TIME_UTC: "0001"
+          SOURCE_CUTOFF_TIME_UTC: "2350"
+        run: |
+          python -m app.main
+
+      - name: Upload local output artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: philippines-mission-intel-output
+          path: output/
+
+          [
+  {
+    "source_name": "US Embassy Manila",
+    "source_url": "https://ph.usembassy.gov/",
+    "section_target": "U.S. Embassy (Manila) travel advisories",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": true
+  },
+  {
+    "source_name": "US State Department Philippines Travel Advisory",
+    "source_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Philippines.html",
+    "section_target": "U.S. State Department travel advisories for Americans",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": true
+  },
+  {
+    "source_name": "CDC Travelers Health Philippines",
+    "source_url": "https://wwwnc.cdc.gov/travel/destinations/traveler/none/philippines",
+    "section_target": "Immunization recommendations",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": false
+  },
+  {
+    "source_name": "PAGASA",
+    "source_url": "https://bagong.pagasa.dost.gov.ph/",
+    "section_target": "PAGASA updates and announcements",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": true
+  },
+  {
+    "source_name": "PHIVOLCS",
+    "source_url": "https://www.phivolcs.dost.gov.ph/",
+    "section_target": "Geothermal activity reported in the country",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": true
+  },
+  {
+    "source_name": "NAIA",
+    "source_url": "https://www.miaa.gov.ph/",
+    "section_target": "NAIA publications and announcements",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": true
+  }
+]
+
+[
+  {
+    "source_name": "US Embassy Manila",
+    "source_url": "https://ph.usembassy.gov/",
+    "section_target": "U.S. Embassy (Manila) travel advisories",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": true
+  },
+  {
+    "source_name": "US State Department Philippines Travel Advisory",
+    "source_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Philippines.html",
+    "section_target": "U.S. State Department travel advisories for Americans",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": true
+  },
+  {
+    "source_name": "CDC Travelers Health Philippines",
+    "source_url": "https://wwwnc.cdc.gov/travel/destinations/traveler/none/philippines",
+    "section_target": "Immunization recommendations",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": false
+  },
+  {
+    "source_name": "PAGASA",
+    "source_url": "https://bagong.pagasa.dost.gov.ph/",
+    "section_target": "PAGASA updates and announcements",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": true
+  },
+  {
+    "source_name": "PHIVOLCS",
+    "source_url": "https://www.phivolcs.dost.gov.ph/",
+    "section_target": "Geothermal activity reported in the country",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": true
+  },
+  {
+    "source_name": "NAIA",
+    "source_url": "https://www.miaa.gov.ph/",
+    "section_target": "NAIA publications and announcements",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": true
+  },
+  {
+    "source_name": "Maritime Security Feed",
+    "source_url": "https://www.reuters.com/world/asia-pacific/",
+    "section_target": "Chinese hostility towards Philippine Navy or Coastguard in the China Sea or disputed territories",
+    "reliability_tier": 2,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": false
+  },
+  {
+    "source_name": "Aviation Disruption Feed",
+    "source_url": "https://www.reuters.com/world/",
+    "section_target": "The effect of global conflicts affecting flights in and out of the country",
+    "reliability_tier": 2,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": false
+  }
+]
+[
+  {
+    "source_name": "US Embassy Manila",
+    "source_url": "https://ph.usembassy.gov/",
+    "section_target": "U.S. Embassy (Manila) travel advisories",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": true,
+    "time_strategy": "meta_or_time_tag"
+  },
+  {
+    "source_name": "US State Department Philippines Travel Advisory",
+    "source_url": "https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Philippines.html",
+    "section_target": "U.S. State Department travel advisories for Americans",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": true,
+    "time_strategy": "meta_or_time_tag"
+  },
+  {
+    "source_name": "CDC Travelers Health Philippines",
+    "source_url": "https://wwwnc.cdc.gov/travel/destinations/traveler/none/philippines",
+    "section_target": "Immunization recommendations",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": false,
+    "time_strategy": "meta_or_time_tag"
+  },
+  {
+    "source_name": "PAGASA",
+    "source_url": "https://bagong.pagasa.dost.gov.ph/",
+    "section_target": "PAGASA updates and announcements",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": true,
+    "time_strategy": "meta_or_time_tag"
+  },
+  {
+    "source_name": "PHIVOLCS",
+    "source_url": "https://www.phivolcs.dost.gov.ph/",
+    "section_target": "Geothermal activity reported in the country",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": true,
+    "time_strategy": "meta_or_time_tag"
+  },
+  {
+    "source_name": "NAIA",
+    "source_url": "https://www.miaa.gov.ph/",
+    "section_target": "NAIA publications and announcements",
+    "reliability_tier": 1,
+    "source_type": "webpage",
+    "enabled": true,
+    "critical": true,
+    "time_strategy": "meta_or_time_tag"
+  }
+]

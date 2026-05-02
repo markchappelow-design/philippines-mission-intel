@@ -1,0 +1,8 @@
+{
+  "ok": false,
+  "phase": "validation_failed",
+  "generated_at_utc": "2026-05-02T01:08:13+00:00",
+  "report_path": "outputs\\latest\\philippines_mission_intel_status_report_latest.pdf",
+  "message": "Missing required report title",
+  "details": {}
+}

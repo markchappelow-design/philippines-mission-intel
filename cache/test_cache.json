@@ -1,0 +1,14 @@
+{
+  "source_name": "Test Source",
+  "section_name": "Weather forecast",
+  "content": "Test content",
+  "retrieved_at_utc": "2026-03-15T00:34:28.582184+00:00",
+  "source_timestamp_utc": "2026-03-15T00:34:28.582184+00:00",
+  "max_age_hours": 12,
+  "required": true,
+  "notes": "test",
+  "raw_metadata": {
+    "a": 1
+  },
+  "source_type": "LIVE_FEED"
+}
