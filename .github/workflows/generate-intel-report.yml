@@ -13,7 +13,7 @@ jobs:
       GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
       GDRIVE_LATEST_FOLDER_ID: ${{ secrets.GDRIVE_LATEST_FOLDER_ID }}
       GDRIVE_ARCHIVE_FOLDER_ID: ${{ secrets.GDRIVE_ARCHIVE_FOLDER_ID }}
-      OUTPUT_PDF: outputs/latest/philippines_intel_report.pdf
+      OUTPUT_PDF: outputs/latest/philippines_mission_intel_status_report_latest.pdf
 
     steps:
       - name: Checkout repo

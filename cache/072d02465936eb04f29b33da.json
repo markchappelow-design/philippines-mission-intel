@@ -4,8 +4,8 @@
   "content": "U.S. Embassy (Manila) travel advisories\nSecurity item identified: Demonstration Alert: Protests Expected Throughout the Philippines, Including Metro Manila\nOperational note: Review Embassy security messaging closely for protest activity, terrorism risk, or location-specific movement restrictions.\nAdministrative / consular item identified: Alerts for U.S. Citizens\nOperational note: Administrative Embassy notices can still affect traveler support, consular access, and appointment availability.",
   "source_type": "WEB",
   "required": true,
-  "retrieved_at_utc": "2026-05-02T01:07:55.631990+00:00",
-  "source_timestamp_utc": "2026-05-02T01:07:55.631990+00:00",
+  "retrieved_at_utc": "2026-05-02T12:32:52.044958+00:00",
+  "source_timestamp_utc": "2026-05-02T12:32:52.044958+00:00",
   "max_age_hours": 24,
   "notes": "Embassy general alerts and security archive both checked.",
   "raw_metadata": {

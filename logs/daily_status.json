@@ -1,8 +1,486 @@
 {
-  "ok": false,
-  "phase": "validation_failed",
-  "generated_at_utc": "2026-05-02T01:08:13+00:00",
+  "ok": true,
+  "phase": "validated",
+  "generated_at_utc": "2026-05-02T12:33:05+00:00",
   "report_path": "outputs\\latest\\philippines_mission_intel_status_report_latest.pdf",
-  "message": "Missing required report title",
-  "details": {}
+  "message": "Report generated and validated successfully.",
+  "details": {
+    "freshness": {
+      "ok": true,
+      "checked_at_utc": "2026-05-02T12:33:04.972476+00:00",
+      "sources_checked": 14,
+      "failed_optional_count": 0,
+      "results": [
+        {
+          "source_name": "Strategic Intelligence Synthesis",
+          "source_type": "ANALYTIC",
+          "required": true,
+          "retrieved_at_utc": "2026-05-02T12:32:50.663716+00:00",
+          "source_timestamp_utc": "2026-05-02T12:32:50.663716+00:00",
+          "max_age_hours": 24,
+          "age_hours": 0.0,
+          "ok": true,
+          "notes": "Strategic synthesis generated from bounded analytic template."
+        },
+        {
+          "source_name": "Priority Intelligence - Taiwan MND",
+          "source_type": "WEB",
+          "required": true,
+          "retrieved_at_utc": "2026-05-02T12:32:50.664715+00:00",
+          "source_timestamp_utc": "2026-05-02T12:32:50.664715+00:00",
+          "max_age_hours": 24,
+          "age_hours": 0.0,
+          "ok": true,
+          "notes": "Priority intelligence simplified and sourced directly to Taiwan MND."
+        },
+        {
+          "source_name": "Regional Maritime Security",
+          "source_type": "DOCUMENT",
+          "required": true,
+          "retrieved_at_utc": "2026-05-02T12:32:52.044958+00:00",
+          "source_timestamp_utc": "2026-05-02T12:32:52.044958+00:00",
+          "max_age_hours": 24,
+          "age_hours": 0.0,
+          "ok": true,
+          "notes": ""
+        },
+        {
+          "source_name": "Philippine Internal Security",
+          "source_type": "DOCUMENT",
+          "required": true,
+          "retrieved_at_utc": "2026-05-02T12:32:52.044958+00:00",
+          "source_timestamp_utc": "2026-05-02T12:32:52.044958+00:00",
+          "max_age_hours": 24,
+          "age_hours": 0.0,
+          "ok": true,
+          "notes": ""
+        },
+        {
+          "source_name": "U.S. Embassy Manila",
+          "source_type": "WEB",
+          "required": true,
+          "retrieved_at_utc": "2026-05-02T12:32:52.044958+00:00",
+          "source_timestamp_utc": "2026-05-02T12:32:52.044958+00:00",
+          "max_age_hours": 24,
+          "age_hours": 0.0,
+          "ok": true,
+          "notes": "Embassy general alerts and security archive both checked."
+        },
+        {
+          "source_name": "U.S. State Department Stub",
+          "source_type": "DOCUMENT",
+          "required": true,
+          "retrieved_at_utc": "2026-05-02T12:32:52.814994+00:00",
+          "source_timestamp_utc": "2026-05-02T12:32:52.814994+00:00",
+          "max_age_hours": 24,
+          "age_hours": 0.0,
+          "ok": true,
+          "notes": ""
+        },
+        {
+          "source_name": "CDC Traveler Health - Philippines",
+          "source_type": "WEB",
+          "required": true,
+          "retrieved_at_utc": "2026-05-02T12:32:52.816007+00:00",
+          "source_timestamp_utc": "2026-05-02T12:32:52.816007+00:00",
+          "max_age_hours": 168,
+          "age_hours": 0.0,
+          "ok": true,
+          "notes": "Health advisory merged with immunization guidance."
+        },
+        {
+          "source_name": "Open-Meteo 5-Day Forecast",
+          "source_type": "LIVE_FEED",
+          "required": true,
+          "retrieved_at_utc": "2026-05-02T12:32:53.231879+00:00",
+          "source_timestamp_utc": "2026-05-02T12:32:53.231879+00:00",
+          "max_age_hours": 12,
+          "age_hours": 0.0,
+          "ok": true,
+          "notes": "Five-day Manila/NAIA forecast with heat-exposure advisory."
+        },
+        {
+          "source_name": "PHIVOLCS Volcano Status",
+          "source_type": "WEB",
+          "required": false,
+          "retrieved_at_utc": "2026-05-02T12:32:53.879363+00:00",
+          "source_timestamp_utc": "2026-05-02T12:32:53.879363+00:00",
+          "max_age_hours": 24,
+          "age_hours": 0.0,
+          "ok": true,
+          "notes": "Official PHIVOLCS bulletin extraction for volcanic/geological movement-risk monitoring."
+        },
+        {
+          "source_name": "Regional Aviation Operations",
+          "source_type": "DOCUMENT",
+          "required": true,
+          "retrieved_at_utc": "2026-05-02T12:32:55.902116+00:00",
+          "source_timestamp_utc": "2026-05-02T12:32:55.902116+00:00",
+          "max_age_hours": 24,
+          "age_hours": 0.0,
+          "ok": true,
+          "notes": ""
+        },
+        {
+          "source_name": "NAIA Public News",
+          "source_type": "API",
+          "required": false,
+          "retrieved_at_utc": "2026-05-02T12:32:55.902116+00:00",
+          "source_timestamp_utc": "2026-05-02T12:32:55.902116+00:00",
+          "max_age_hours": 24,
+          "age_hours": 0.0,
+          "ok": true,
+          "notes": "Fallback basis: validated_items=0 rejected=0 rows_parsed=70"
+        },
+        {
+          "source_name": "Regional Visa-Free Overview",
+          "source_type": "DOCUMENT",
+          "required": true,
+          "retrieved_at_utc": "2026-05-02T12:32:57.340243+00:00",
+          "source_timestamp_utc": "2026-05-02T12:32:57.340243+00:00",
+          "max_age_hours": 24,
+          "age_hours": 0.0,
+          "ok": true,
+          "notes": "Broad awareness only; not operational fallback list."
+        },
+        {
+          "source_name": "Contingency Entry Verification",
+          "source_type": "LIVE_FEED",
+          "required": true,
+          "retrieved_at_utc": "2026-05-02T12:32:57.340243+00:00",
+          "source_timestamp_utc": "2026-05-02T12:32:57.340243+00:00",
+          "max_age_hours": 24,
+          "age_hours": 0.0,
+          "ok": true,
+          "notes": "Daily-verified shortlist of nearby no-visa diversion options for both U.S. and Philippine passport holders."
+        },
+        {
+          "source_name": "live_military",
+          "source_type": "WEB",
+          "required": false,
+          "retrieved_at_utc": "2026-05-02T12:33:04.971474+00:00",
+          "source_timestamp_utc": "2026-05-02T12:33:04.971474+00:00",
+          "max_age_hours": 24,
+          "age_hours": 0.0,
+          "ok": true,
+          "notes": "Live military / PLA regional activity watch"
+        }
+      ]
+    },
+    "validation": {
+      "title_found": true,
+      "sections_checked": 7,
+      "word_count": 1576
+    },
+    "delta": {
+      "previous_report_found": true,
+      "diff_line_count": 25,
+      "significant_change_detected": true,
+      "significant_diff_threshold": 5
+    },
+    "alerts": [
+      "SIGNIFICANT_DELTA_DETECTED"
+    ],
+    "quality_control": {
+      "sources_checked": 14,
+      "failed_optional_sources": 0,
+      "used_cache_fallback": false,
+      "significant_change_detected": true,
+      "high_severity_signal_count": 5,
+      "overall_report_confidence": "Medium-High"
+    },
+    "source_health": {
+      "live_sources": [
+        "Strategic Situation",
+        "Immunization recommendations",
+        "Geological / Volcanic Activity",
+        "NAIA / airport operational status"
+      ],
+      "cache_fallback_sources": [],
+      "stub_sources": []
+    },
+    "sources": [
+      {
+        "source_name": "Strategic Intelligence Synthesis",
+        "section_name": "Strategic Situation",
+        "retrieved_at_utc": "2026-05-02T12:32:50.663716+00:00",
+        "source_timestamp_utc": "2026-05-02T12:32:50.663716+00:00",
+        "source_type": "ANALYTIC",
+        "required": true,
+        "max_age_hours": 24,
+        "notes": "Strategic synthesis generated from bounded analytic template.",
+        "raw_metadata": {
+          "provider": "internal_synthesis",
+          "live_mode": true,
+          "quality_issues": [],
+          "quality_ok": true,
+          "live_fetch_attempted": true,
+          "live_fetch_ok": true,
+          "cache_fallback": false,
+          "fallback_reason": "",
+          "fallback_stage": "",
+          "fallback_reason_detail": ""
+        }
+      },
+      {
+        "source_name": "Priority Intelligence - Taiwan MND",
+        "section_name": "Priority Intelligence",
+        "retrieved_at_utc": "2026-05-02T12:32:50.664715+00:00",
+        "source_timestamp_utc": "2026-05-02T12:32:50.664715+00:00",
+        "source_type": "WEB",
+        "required": true,
+        "max_age_hours": 24,
+        "notes": "Priority intelligence simplified and sourced directly to Taiwan MND.",
+        "raw_metadata": {
+          "provider": "mnd.gov.tw",
+          "api_url": "https://www.mnd.gov.tw/en/news/PlaactList",
+          "latest_title": "2026.05.02\nPLA activities in the waters and airspace around Taiwan",
+          "live_fetch_attempted": true,
+          "live_fetch_ok": true,
+          "cache_fallback": false,
+          "fallback_reason": "",
+          "fallback_stage": "",
+          "fallback_reason_detail": ""
+        }
+      },
+      {
+        "source_name": "Regional Maritime Security",
+        "section_name": "Regional Maritime Security",
+        "retrieved_at_utc": "2026-05-02T12:32:52.044958+00:00",
+        "source_timestamp_utc": "2026-05-02T12:32:52.044958+00:00",
+        "source_type": "DOCUMENT",
+        "required": true,
+        "max_age_hours": 24,
+        "notes": "",
+        "raw_metadata": {}
+      },
+      {
+        "source_name": "Philippine Internal Security",
+        "section_name": "Internal Security / Terrorism Assessment",
+        "retrieved_at_utc": "2026-05-02T12:32:52.044958+00:00",
+        "source_timestamp_utc": "2026-05-02T12:32:52.044958+00:00",
+        "source_type": "DOCUMENT",
+        "required": true,
+        "max_age_hours": 24,
+        "notes": "",
+        "raw_metadata": {}
+      },
+      {
+        "source_name": "U.S. Embassy Manila",
+        "section_name": "U.S. Embassy (Manila) travel advisories",
+        "retrieved_at_utc": "2026-05-02T12:32:52.044958+00:00",
+        "source_timestamp_utc": "2026-05-02T12:32:52.044958+00:00",
+        "source_type": "WEB",
+        "required": true,
+        "max_age_hours": 24,
+        "notes": "Embassy general alerts and security archive both checked.",
+        "raw_metadata": {
+          "provider": "ph.usembassy.gov",
+          "alerts_url": "https://ph.usembassy.gov/category/alert/",
+          "security_url": "https://ph.usembassy.gov/category/security/",
+          "selected_security_item": "Demonstration Alert: Protests Expected Throughout the Philippines, Including Metro Manila",
+          "selected_alert_item": "Alerts for U.S. Citizens",
+          "live_fetch_attempted": true,
+          "live_fetch_ok": true,
+          "cache_fallback": false,
+          "fallback_reason": "",
+          "fallback_stage": "",
+          "fallback_reason_detail": ""
+        }
+      },
+      {
+        "source_name": "U.S. State Department Stub",
+        "section_name": "U.S. State Department travel advisories for Americans",
+        "retrieved_at_utc": "2026-05-02T12:32:52.814994+00:00",
+        "source_timestamp_utc": "2026-05-02T12:32:52.814994+00:00",
+        "source_type": "DOCUMENT",
+        "required": true,
+        "max_age_hours": 24,
+        "notes": "",
+        "raw_metadata": {}
+      },
+      {
+        "source_name": "CDC Traveler Health - Philippines",
+        "section_name": "Immunization recommendations",
+        "retrieved_at_utc": "2026-05-02T12:32:52.816007+00:00",
+        "source_timestamp_utc": "2026-05-02T12:32:52.816007+00:00",
+        "source_type": "WEB",
+        "required": true,
+        "max_age_hours": 168,
+        "notes": "Health advisory merged with immunization guidance.",
+        "raw_metadata": {
+          "provider": "cdc.gov",
+          "api_url": "https://wwwnc.cdc.gov/travel/destinations/traveler/none/philippines",
+          "live_mode": true,
+          "live_fetch_attempted": true,
+          "live_fetch_ok": true,
+          "cache_fallback": false,
+          "fallback_reason": "",
+          "fallback_stage": "",
+          "fallback_reason_detail": ""
+        }
+      },
+      {
+        "source_name": "Open-Meteo 5-Day Forecast",
+        "section_name": "Weather forecast",
+        "retrieved_at_utc": "2026-05-02T12:32:53.231879+00:00",
+        "source_timestamp_utc": "2026-05-02T12:32:53.231879+00:00",
+        "source_type": "LIVE_FEED",
+        "required": true,
+        "max_age_hours": 12,
+        "notes": "Five-day Manila/NAIA forecast with heat-exposure advisory.",
+        "raw_metadata": {
+          "provider": "open-meteo",
+          "api_url": "https://api.open-meteo.com/v1/forecast",
+          "timezone": "Asia/Manila",
+          "forecast_days": 5,
+          "live_fetch_attempted": true,
+          "live_fetch_ok": true,
+          "cache_fallback": false,
+          "fallback_reason": "",
+          "fallback_stage": "",
+          "fallback_reason_detail": ""
+        }
+      },
+      {
+        "source_name": "PHIVOLCS Volcano Status",
+        "section_name": "Geological / Volcanic Activity",
+        "retrieved_at_utc": "2026-05-02T12:32:53.879363+00:00",
+        "source_timestamp_utc": "2026-05-02T12:32:53.879363+00:00",
+        "source_type": "WEB",
+        "required": false,
+        "max_age_hours": 24,
+        "notes": "Official PHIVOLCS bulletin extraction for volcanic/geological movement-risk monitoring.",
+        "raw_metadata": {
+          "provider": "PHIVOLCS",
+          "source_url": "https://wovodat.phivolcs.dost.gov.ph/bulletin/list-of-bulletin",
+          "alert_levels_url": "https://www.phivolcs.dost.gov.ph/volcano-alert-levels/",
+          "live_mode": true,
+          "extracted_items": [
+            "Visitors: 1201789 Alert Level Status: Taal - 1 Kanlaon - 2 Bulusan - 1 Pinatubo - 0 Mayon - 3 (+632) 8426-1468 loc 311/312 mail.vmepd@phivolcs.dost.gov.ph",
+            "Alert Level Status: Taal - 1 Kanlaon - 2 Bulusan - 1 Pinatubo - 0 Mayon - 3",
+            "Alert Level Status:",
+            "Taal - 1 Kanlaon - 2 Bulusan - 1 Pinatubo - 0 Mayon - 3",
+            "Taal - 1"
+          ],
+          "risk_terms": [
+            "Alert level language present",
+            "Eruption language present",
+            "Volcanic earthquake language present"
+          ],
+          "live_fetch_attempted": true,
+          "live_fetch_ok": true,
+          "cache_fallback": false,
+          "fallback_reason": "",
+          "fallback_stage": "",
+          "fallback_reason_detail": ""
+        }
+      },
+      {
+        "source_name": "Regional Aviation Operations",
+        "section_name": "Aviation Operations Environment",
+        "retrieved_at_utc": "2026-05-02T12:32:55.902116+00:00",
+        "source_timestamp_utc": "2026-05-02T12:32:55.902116+00:00",
+        "source_type": "DOCUMENT",
+        "required": true,
+        "max_age_hours": 24,
+        "notes": "",
+        "raw_metadata": {}
+      },
+      {
+        "source_name": "NAIA Public News",
+        "section_name": "NAIA / airport operational status",
+        "retrieved_at_utc": "2026-05-02T12:32:55.902116+00:00",
+        "source_timestamp_utc": "2026-05-02T12:32:55.902116+00:00",
+        "source_type": "API",
+        "required": false,
+        "max_age_hours": 24,
+        "notes": "Fallback basis: validated_items=0 rejected=0 rows_parsed=70",
+        "raw_metadata": {
+          "provider": "newnaia.com.ph",
+          "api_url": "https://newnaia.com.ph/api/v1/page/news/data-list",
+          "site_url": "https://newnaia.com.ph/about-us/news",
+          "rows_parsed": 70,
+          "validated_items": 0,
+          "rejected_items": 0,
+          "live_mode": true,
+          "quality_issues": [],
+          "quality_ok": true,
+          "fallback_reason": "",
+          "live_fetch_attempted": true,
+          "live_fetch_ok": true,
+          "cache_fallback": false,
+          "fallback_stage": "",
+          "fallback_reason_detail": ""
+        }
+      },
+      {
+        "source_name": "Regional Visa-Free Overview",
+        "section_name": "Visa-free diversion baseline",
+        "retrieved_at_utc": "2026-05-02T12:32:57.340243+00:00",
+        "source_timestamp_utc": "2026-05-02T12:32:57.340243+00:00",
+        "source_type": "DOCUMENT",
+        "required": true,
+        "max_age_hours": 24,
+        "notes": "Broad awareness only; not operational fallback list.",
+        "raw_metadata": {}
+      },
+      {
+        "source_name": "Contingency Entry Verification",
+        "section_name": "Contingency diversion footnote",
+        "retrieved_at_utc": "2026-05-02T12:32:57.340243+00:00",
+        "source_timestamp_utc": "2026-05-02T12:32:57.340243+00:00",
+        "source_type": "LIVE_FEED",
+        "required": true,
+        "max_age_hours": 24,
+        "notes": "Daily-verified shortlist of nearby no-visa diversion options for both U.S. and Philippine passport holders.",
+        "raw_metadata": {
+          "qualified_destinations": [
+            "Malaysia",
+            "Singapore",
+            "Thailand"
+          ],
+          "excluded_destinations": [],
+          "verification": [
+            {
+              "name": "Malaysia",
+              "ok": true,
+              "summary": "Malaysia verified.",
+              "source_url": "https://imigresen-online.imi.gov.my/mdac/main",
+              "expiry_utc": null
+            },
+            {
+              "name": "Singapore",
+              "ok": true,
+              "summary": "Singapore verified.",
+              "source_url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements",
+              "expiry_utc": null
+            },
+            {
+              "name": "Thailand",
+              "ok": true,
+              "summary": "Thailand verified.",
+              "source_url": "https://tdac.immigration.go.th/arrival-card/#/home",
+              "expiry_utc": null
+            }
+          ],
+          "policy_standard": "dual-passport no-visa / rapid-entry (arrival declaration allowed)"
+        }
+      },
+      {
+        "source_name": "live_military",
+        "section_name": "Priority Intelligence",
+        "retrieved_at_utc": "2026-05-02T12:33:04.971474+00:00",
+        "source_timestamp_utc": "2026-05-02T12:33:04.971474+00:00",
+        "source_type": "WEB",
+        "required": false,
+        "max_age_hours": 24,
+        "notes": "Live military / PLA regional activity watch",
+        "raw_metadata": {
+          "provider": "live_military_sources",
+          "confidence": "medium"
+        }
+      }
+    ]
+  }
 }
