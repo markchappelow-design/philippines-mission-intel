@@ -32,7 +32,7 @@ jobs:
 
       - name: Generate report
         run: |
-          python .\generate_report.py
+          python generate_report.py
 
       - name: Verify PDF exists
         run: |
