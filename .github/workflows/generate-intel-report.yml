@@ -38,6 +38,10 @@ jobs:
         run: |
           test -f "$OUTPUT_PDF"
 
+      - name: Restore OAuth token
+        run: |
+            echo "${{ secrets.GDRIVE_OAUTH_TOKEN }}" | base64 -d > token.json      
+
       - name: Upload to Google Drive
         run: |
           python cloud_upload.py

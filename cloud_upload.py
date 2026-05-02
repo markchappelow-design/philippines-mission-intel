@@ -2,8 +2,12 @@ import os
 from pathlib import Path
 from datetime import datetime, timezone
 
-from google.oauth2 import service_account
+from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
+
+def get_drive_service():
+    creds = Credentials.from_authorized_user_file("token.json")
+    return build("drive", "v3", credentials=creds)
 from googleapiclient.http import MediaFileUpload
 
 
@@ -27,7 +31,7 @@ def upload_file(service, local_path: Path, folder_id: str, drive_name: str):
         media_body=media,
         fields="id,name",
         supportsAllDrives=True,
-    ).execute()
+    ).execute(num_retries=3)
 
 
 def delete_existing_named_file(service, folder_id: str, filename: str):
@@ -52,7 +56,6 @@ def delete_existing_named_file(service, folder_id: str, filename: str):
 
 
 def main():
-    service_account_json = os.environ["GOOGLE_SERVICE_ACCOUNT_JSON"]
     latest_folder_id = os.environ["GDRIVE_LATEST_FOLDER_ID"]
     archive_folder_id = os.environ["GDRIVE_ARCHIVE_FOLDER_ID"]
     output_pdf = Path(os.environ.get("OUTPUT_PDF", "outputs/latest/philippines_intel_report.pdf"))
@@ -60,15 +63,7 @@ def main():
     if not output_pdf.exists():
         raise FileNotFoundError(f"PDF not found: {output_pdf}")
 
-    credentials_path = Path("service_account.json")
-    credentials_path.write_text(service_account_json, encoding="utf-8")
-
-    creds = service_account.Credentials.from_service_account_file(
-        str(credentials_path),
-        scopes=SCOPES,
-    )
-
-    service = build("drive", "v3", credentials=creds)
+    service = get_drive_service()
 
     latest_name = "philippines_intel_report_latest.pdf"
     date_stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d")
