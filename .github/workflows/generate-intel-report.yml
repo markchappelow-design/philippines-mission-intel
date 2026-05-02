@@ -39,9 +39,14 @@ jobs:
           test -f "$OUTPUT_PDF"
 
       - name: Restore OAuth token
+        shell: python
+        env:
+            GDRIVE_OAUTH_TOKEN: ${{ secrets.GDRIVE_OAUTH_TOKEN }}
         run: |
-            echo "${{ secrets.GDRIVE_OAUTH_TOKEN }}" | base64 -d > token.json      
+            import base64
+            import os
+            from pathlib import Path
 
-      - name: Upload to Google Drive
-        run: |
-          python cloud_upload.py
+            token = os.environ["GDRIVE_OAUTH_TOKEN"].strip()
+            Path("token.json").write_bytes(base64.b64decode(token))
+            print("token.json restored")
