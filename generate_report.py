@@ -951,11 +951,11 @@ def build_priority_ranking_summary(section_map: dict[str, str]) -> str:
     if not top_items:
         top_items = [f"Regional Military Activity: {mil_level} — no high-priority items extracted."]
 
+    trend = "INCREASING" if moderate_count + high_count > 10 else "STABLE"
+
     lines = [
         "Priority Ranking:",
-        trend = "INCREASING" if moderate_count + high_count > 10 else "STABLE"
-
-        f"1. Regional Military Activity: {mil_level} ({trend}) — ..."
+        f"1. Regional Military Activity: {mil_level} ({trend}) — {high_count} HIGH / {moderate_count} MODERATE / {low_count} LOW item(s).",
     ]
 
     for idx, item in enumerate(top_items[:3], start=2):
