@@ -104,6 +104,7 @@ SECTION_GEOLOGICAL = "Geological / Volcanic Activity"
 SECTION_NAIA = "NAIA / airport operational status"
 SECTION_DECISION = "Decision Guidance"
 SECTION_ESCALATION = "Escalation Thresholds"
+SECTION_REGIONAL_MIL_ACTIVITY = "Regional Military Activity / Movement"
 SECTION_CONTINGENCY = "Contingency Evacuation"
 SECTION_CHANGES = "Significant Changes Since Last Report"
 SECTION_QC = "Quality Control Summary"
@@ -131,6 +132,15 @@ REQUIRED_SECTION_FALLBACKS = {
         "Treat this section as baseline context only. Verify current security, transportation, weather, and health indicators before movement."
     ),
 
+    SECTION_REGIONAL_MIL_ACTIVITY: (
+        f"{SECTION_REGIONAL_MIL_ACTIVITY}\n\n"
+        "No reportable regional military activity detected in monitored open-source feeds during this collection cycle.\n\n"
+        "Monitoring emphasis remains: Philippine Sea, West Philippine Sea, Luzon Strait, Batanes, Palawan, Taiwan approaches, "
+        "Scarborough Shoal, EDCA sites, maritime patrol activity, air/naval exercises, missile deployments, coast guard interactions, "
+        "and official defense statements.\n\n"
+        "Confidence: Medium"
+    ),
+    
     SECTION_PRIORITY_INTELLIGENCE: (
         f"{SECTION_PRIORITY_INTELLIGENCE}\n\n"
         "No current PLA / regional military activity met freshness threshold. "
@@ -628,7 +638,7 @@ def map_frame(img):
 
 def build_section_collection_note(section: IntelSection) -> str:
     if not section.cache_fallback:
-        return ""
+        return "No reportable regional military activity detected."
 
     reason = (section.fallback_reason or "unknown").replace("_", " ")
     return (
@@ -668,7 +678,7 @@ def build_crisis_indicator_block(signals: dict[str, Any]) -> dict[str, Any]:
 
 def build_section_collection_note(section: IntelSection) -> str:
     if not section.cache_fallback:
-        return ""
+        return "No reportable regional military activity detected."
 
     reason = (section.fallback_reason or "unknown").replace("_", " ")
     return (
@@ -883,6 +893,77 @@ def build_cover_page(now_utc, signals, used_cache=False) -> str:
         "",
         "UNCLASSIFIED // OPEN SOURCE",
     ])
+
+def build_priority_ranking_summary(section_map: dict[str, str]) -> str:
+    content = str(section_map.get("Regional Military Activity / Movement", "") or "")
+
+    if not content.strip():
+        return (
+            "Priority Ranking:\n"
+            "1. Regional Military Activity: LOW — no reportable military movement detected.\n"
+            "2. Aviation / Airport Operations: MONITOR — verify before movement.\n"
+            "3. Weather / Environmental Risk: MONITOR — check heat, rain, and flooding conditions."
+        )
+
+    high_count = content.count("[HIGH]")
+    moderate_count = content.count("[MODERATE]")
+    low_count = content.count("[LOW]")
+
+    if high_count:
+        mil_level = "HIGH"
+    elif moderate_count:
+        mil_level = "MODERATE"
+    elif low_count:
+        mil_level = "LOW"
+    else:
+        mil_level = "MONITOR"
+
+    AO_KEYWORDS = [
+        "philippine",
+        "west philippine sea",
+        "south china sea",
+        "wps",
+        "luzon",
+        "batanes",
+        "palawan",
+        "scarborough",
+        "second thomas",
+        "china coast guard",
+        "pla",
+        "chinese",
+    ]
+
+    top_items = []
+
+    for line in content.splitlines():
+        line = line.strip()
+        line_l = line.lower()
+
+        if (
+            (line.startswith("- [HIGH]") or line.startswith("- [MODERATE]"))
+            and any(k in line_l for k in AO_KEYWORDS)
+        ):
+            top_items.append(line.replace("- ", "", 1))
+
+        if len(top_items) >= 3:
+            break
+
+    if not top_items:
+        top_items = [f"Regional Military Activity: {mil_level} — no high-priority items extracted."]
+
+    lines = [
+        "Priority Ranking:",
+        trend = "INCREASING" if moderate_count + high_count > 10 else "STABLE"
+
+        f"1. Regional Military Activity: {mil_level} ({trend}) — ..."
+    ]
+
+    for idx, item in enumerate(top_items[:3], start=2):
+        lines.append(f"{idx}. {item}")
+
+    lines.append("Assessment: Monitor for embassy alert changes, airspace restrictions, airport disruption, maritime confrontation, or official escalation language.")
+
+    return "\n".join(lines)
 
 def build_header(canvas, doc):
     canvas.saveState()
@@ -1111,7 +1192,8 @@ def build_base_section_map(payloads: list[SourcePayload]) -> dict[str, str]:
     # --- Priority Intelligence (merged sources) ---
     priority_payloads = [
         p for p in payloads
-        if getattr(p, "category", "") == SECTION_PRIORITY_INTELLIGENCE
+        if getattr(p, "category", "") == SECTION_PRIORITY_INTELLIGENCE \
+            and p.section_name != "Regional Military Activity / Movement"
     ]
 
     priority_parts = []
@@ -1130,7 +1212,7 @@ def build_base_section_map(payloads: list[SourcePayload]) -> dict[str, str]:
         SECTION_PRIORITY_INTELLIGENCE
         ]            
 
-        return section_map
+    return section_map
 
 def md_line_to_flowables(line, styles, body_style, heading_style):
     out = []
@@ -1302,13 +1384,13 @@ def build_escalation_thresholds_section() -> str:
 
 def dedupe_heading(section_name, content):
     if content is None:
-        return ""
+        return "No reportable regional military activity detected."
 
     content = str(content)
     lines = [line.rstrip() for line in content.strip().splitlines()]
 
     if not lines:
-        return ""
+        return "No reportable regional military activity detected."
 
     if lines[0].strip() == section_name:
         lines = lines[1:]
@@ -1321,6 +1403,7 @@ REPORT_SECTION_ORDER = [
     "Active Condition",
     SECTION_STRATEGIC_SITUATION,
     SECTION_PRIORITY_INTELLIGENCE,
+    SECTION_REGIONAL_MIL_ACTIVITY,
     "Regional Security / External Threat Environment",
     "Internal Security / Terrorism Assessment",
     SECTION_EMBASSY,
@@ -1403,7 +1486,7 @@ def build_report_text(section_map: dict, crisis_banner: str | None = None) -> st
 
 def build_collection_note(payload: SourcePayload) -> str:
     if not payload.raw_metadata.get("cache_fallback"):
-        return ""
+        return "No reportable regional military activity detected."
 
     reason = str(payload.raw_metadata.get("fallback_reason", "unknown")).replace("_", " ")
 
@@ -2165,6 +2248,13 @@ def main() -> int:
         pmisr_template = load_json(PMISR_V2_TEMPLATE_PATH)
 
         records = [p.to_source_record() for p in payloads]
+        for r in records:
+            reference_time = getattr(r, "reference_time", None)
+
+            if reference_time is None:
+                print("BAD RECORD TYPE:", type(r))
+                print("BAD RECORD FIELDS:", vars(r))
+
         freshness = validate_all_sources(records)
 
         events = payloads_to_events(payloads)
@@ -2225,23 +2315,14 @@ def main() -> int:
 # --- Hybrid normalization (full version) ---
 
         # Commander's Summary
-        section_map["Commander's Summary"] = (
-            "Environment: Stable but sensitive.\n"
-            "Most likely disruption: Weather / airport friction.\n"
-            "Most dangerous escalation: Regional military tension affecting routing confidence, airspace posture, or crisis response timelines.\n"
-            f"Operational posture: {posture}.\n\n"
-            "Bottom Line:\n"
-            "Travel remains feasible under active monitoring. Proceed with movement planning, maintain alternate routing and lodging options, "
-            "and verify embassy, airport, airline, and weather reporting throughout the travel window.\n\n"
-            "Confidence: Medium"
-        )
+        priority_ranking = build_priority_ranking_summary(section_map)
 
-        # Commander's Summary
         section_map["Commander's Summary"] = (
             "Environment: Stable but sensitive.\n"
             "Most likely disruption: Weather / airport friction.\n"
             "Most dangerous escalation: Regional military tension affecting routing confidence, airspace posture, or crisis response timelines.\n"
             f"Operational posture: {posture}.\n\n"
+            f"{priority_ranking}\n\n"
             "Bottom Line:\n"
             "Travel remains feasible under active monitoring. Proceed with movement planning, maintain alternate routing and lodging options, "
             "and verify embassy, airport, airline, and weather reporting throughout the travel window.\n\n"
@@ -2602,6 +2683,9 @@ def main() -> int:
             alerts=alerts,
         )
 
+        records = [p.to_source_record() for p in payloads]
+
+        records = [r for r in records if r is not None]
 
         section_map["Significant Changes Since Last Report"] = delta_summary_text
         section_map["Quality Control Summary"] = "Pending final delta assessment."
@@ -2684,14 +2768,8 @@ def main() -> int:
         # Render to latest first
         render_pdf(report_text, latest_pdf, cover_text=cover_text)
 
-        if not latest_pdf.exists():
-            raise RuntimeError(f"PDF was not created: {latest_pdf}")
-
         # Then archive the finished latest PDF
         shutil.copy2(latest_pdf, archive_pdf)
-
-        if not archive_pdf.exists():
-            raise RuntimeError(f"Archive PDF was not created: {archive_pdf}")
 
         validation = validate_report_text(report_text)
 

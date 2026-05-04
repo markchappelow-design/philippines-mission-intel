@@ -17,8 +17,9 @@ from sources.visa_adapter import VisaAdapter
 from sources.contingency_entry_adapter import ContingencyEntryAdapter
 from sources.phivolcs_adapter import PHIVOLCSAdapter
 
+from sources.regional_military_activity import collect_regional_military_activity
 
-def collect_all_sources() -> list[SourcePayload]:
+def collect_all_sources():
     weather_api_url = WEATHER_API_URL
     weather_timeout_sec = WEATHER_TIMEOUT_SEC
 
@@ -39,6 +40,8 @@ def collect_all_sources() -> list[SourcePayload]:
         LiveMilitaryAdapter(timeout_sec=15),
     ]
 
-    return [adapter.fetch() for adapter in adapters]
+    payloads = [adapter.fetch() for adapter in adapters]
 
-  
+    payloads.append(collect_regional_military_activity())
+
+    return payloads
